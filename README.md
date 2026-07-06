@@ -1,6 +1,6 @@
 # use-tailwind-media-query
 
-React hooks for Tailwind-style breakpoints and arbitrary media queries.
+React 19 hooks for Tailwind-style breakpoints and arbitrary media queries.
 
 ## Motivation 
 
