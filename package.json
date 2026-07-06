@@ -1,0 +1,55 @@
+{
+  "name": "@bwt2/useTailwindMediaQuery",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Helper react hook to listen for tailwind media breakpoints. Intended for use with adaptive design.",
+  "author": "Brian W Tjahjadi <brian.w.tjahjadi@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/bwt2/useTailwindMediaQuery#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwt2/useTailwindMediaQuery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bwt2/useTailwindMediaQuery/issues"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "play": "vite",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^25.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.5",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "bumpp": "^11.1.0",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.11",
+    "vitest": "^4.1.5",
+    "vitest-browser-react": "^2.2.0"
+  }
+}
