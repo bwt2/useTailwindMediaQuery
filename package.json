@@ -1,7 +1,7 @@
 {
   "name": "@btja/use-tailwind-media-query",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Helper react hook to listen for tailwind media breakpoints. Intended for use with adaptive design.",
   "author": "Brian W Tjahjadi <brian.w.tjahjadi@gmail.com>",
   "license": "MIT",
