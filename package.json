@@ -5,6 +5,16 @@
   "description": "Helper react hook to listen for tailwind media breakpoints. Intended for use with adaptive design.",
   "author": "Brian W Tjahjadi <brian.w.tjahjadi@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "tailwind",
+    "media-query",
+    "react",
+    "hooks",
+    "react-hooks",
+    "hook",
+    "custom-hook",
+    "use-tailwind-media-query"
+  ],
   "homepage": "https://github.com/bwt2/use-tailwind-media-query#readme",
   "repository": {
     "type": "git",
