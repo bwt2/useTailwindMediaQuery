@@ -21,6 +21,10 @@ every component.
 Multiple components on the same screen can listen to the
 same media query without duplicating listeners and wasting memory.
 
+## Demo
+
+Live demo: https://bwt2.github.io/useTailwindMediaQuery/
+
 ## Installation
 
 ```bash
