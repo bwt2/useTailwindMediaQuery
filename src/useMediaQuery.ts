@@ -63,7 +63,7 @@ function getMediaQueryStore(query: string) {
   return store;
 }
 
-export function useMediaQuery(query: string) {
+export function useMediaQuery(query: string): boolean {
   const store = getMediaQueryStore(query);
 
   return useSyncExternalStore(

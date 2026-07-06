@@ -6,12 +6,35 @@ React hooks for Tailwind-style breakpoints and arbitrary media queries.
 
 ### Adaptive design
 
-Use adaptive design when layouts should change structure across breakpoints, not just
-resize. Good cases include dashboards, dense data views, and flows that need different
-navigation or interaction patterns on mobile vs desktop.
 
-Prefer plain responsive design when the same hierarchy still works and only spacing,
+This hook is intended to be used in adaptive designs in React.
+
+Use adaptive design when layouts should change across breakpoints (for example: dashboards, dense data views, and flows on desktop vs mobile). Prefer plain responsive design when the same hierarchy still works and only spacing,
 columns, or typography need to change.
+
+### Store
+
+The hooks share a small media-query store so repeated breakpoint checks can reuse the
+same underlying subscription instead of attaching duplicate `matchMedia` listeners in
+every component. 
+
+Multiple components on the same screen can listen to the
+same media query without duplicating listeners and wasting memory.
+
+## Installation
+
+```bash
+npm i @btja/useTailwindMediaQuery
+```
+```bash
+yarn add @btja/useTailwindMediaQuery
+```
+```bash
+pnpm add @btja/useTailwindMediaQuery
+```
+```bash
+bun add @btja/useTailwindMediaQuery
+```
 
 ## API
 
@@ -23,8 +46,8 @@ import {
   useIsMobile,
   useIsTablet,
   useMediaQuery,
-} from 'useTailwindMediaQuery'
-import type { TailwindBreakpoint } from 'useTailwindMediaQuery'
+} from '@btja/useTailwindMediaQuery'
+import type { TailwindBreakpoint } from '@btja/useTailwindMediaQuery'
 ```
 
 Built-in tailwind breakpoints (`TailwindBreakpoint`):
@@ -53,7 +76,7 @@ Hooks:
 `useIsMobile` (`useIsTablet`, `useIsDesktop`, `useIsLargeDesktop`):
 
 ```tsx
-import { useIsMobile } from 'useTailwindMediaQuery'
+import { useIsMobile } from '@btja/useTailwindMediaQuery'
 
 export function Example() {
   const isMobile = useIsMobile()
@@ -78,7 +101,7 @@ export function Example() {
 `useTailwindBreakpoint`:
 
 ```tsx
-import { useTailwindBreakpoint } from 'useTailwindMediaQuery'
+import { useTailwindBreakpoint } from '@btja/useTailwindMediaQuery'
 
 export function SidebarLayout() {
   const showSidebar = useTailwindBreakpoint('lg')
@@ -90,7 +113,7 @@ export function SidebarLayout() {
 `useMediaQuery`:
 
 ```tsx
-import { useMediaQuery } from 'useTailwindMediaQuery'
+import { useMediaQuery } from '@btja/useTailwindMediaQuery'
 
 export function MotionPreference() {
   const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
@@ -127,7 +150,13 @@ If SEO matters, avoid putting unique primary content in only one branch. Keep he
 copy, links, and other canonical content the same when possible, and reserve screen-
 specific differences for layout or secondary UI.
 
+## Limitations
+Current limitation: `useMediaQuery` depends on `MediaQueryList.addEventListener` /
+`removeEventListener`. Older Safari/WebView environments that only implement
+`addListener` / `removeListener` are not supported.
+
 ## Development
+Using pnpm.
 
 ```bash
 pnpm install
@@ -135,4 +164,12 @@ pnpm run play # run vite playground
 pnpm run test
 pnpm run typecheck
 pnpm run build
+```
+
+Before releasing (after `npm login`):
+
+```bash
+pnpm bump:version
+pnpm check:release
+npm publish --access public
 ```

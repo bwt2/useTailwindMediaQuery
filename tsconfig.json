@@ -11,7 +11,8 @@
     "types": [],
     "declaration": true,
     "emitDeclarationOnly": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "isolatedDeclarations": true
   },
   "include": ["src"]
 }

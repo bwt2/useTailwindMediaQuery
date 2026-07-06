@@ -3,9 +3,22 @@ import { reactCompilerPreset } from '@vitejs/plugin-react'
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  dts: true,
-  exports: true,
+  entry: ['./src/index.ts'],
+  format: ['esm', 'cjs'],
   platform: 'neutral',
+  publint: true,
+  attw: true,
+  target: 'node14.18',
+  minify: true,
+  shims: true,
+  deps: {
+    neverBundle: ['react', 'react-dom', /^react\//],
+  },
+  dts: true,
+  // sourcemap: true,
+  exports: {
+    legacy: true,
+  },
   plugins: [
     pluginBabel({
       presets: [reactCompilerPreset()],
