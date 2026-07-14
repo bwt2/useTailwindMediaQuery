@@ -8,9 +8,8 @@ export default defineConfig({
   platform: 'neutral',
   publint: true,
   attw: true,
-  target: 'node14.18',
-  minify: true,
-  shims: true,
+  // minify: true,
+  // shims: true,
   deps: {
     neverBundle: ['react', 'react-dom', /^react\//],
   },
